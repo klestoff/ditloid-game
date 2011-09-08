@@ -20,10 +20,10 @@
 	foreach ($phrasesList as $phrase) {
 		$phrase 		= explode("\t", $phrase);
 		$questionList[]	= reset($phrase);
-		$answerList[]	= md5(mb_strtolower(end($phrase)));
+		$answerList[]	= md5(mb_strtolower(trim(end($phrase))));
 	}
 
 	echo 
-		'questionList = \''.implode('\',\'', $questionList).'\''.PHP_EOL.PHP_EOL
-		.'answerList = \''.implode('\',\'', $answerList).'\''.PHP_EOL.PHP_EOL;
+		'var questionList = [\''.implode('\',\'', $questionList).'\'],'.PHP_EOL
+		.'answerList = [\''.implode('\',\'', $answerList).'\'];'.PHP_EOL.PHP_EOL;
 ?>
